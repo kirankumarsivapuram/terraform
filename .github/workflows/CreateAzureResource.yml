@@ -18,3 +18,12 @@ jobs:
     - name: az login
       run: |
         az login --service-principal -u ${{secrets.user}} -p ${{secrets.password}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
+    - name: Setup Terraform
+      run: hashicorp/setup-terraform@v2
+      
+    - name: Terraform Init
+      run: terraform init
+    - name: Terraform Plan
+      run: terraform plan
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
