@@ -11,15 +11,7 @@ terraform {
       source  = "hashicorp/random"
       version = "~>3.0"
     }
-  }
-  backend "azurerm" {
-    resource_group_name  = "devops"
-    storage_account_name = "filebased"
-    container_name       = "statefile"
-    key                  = "bbZ8tITc2+x8M3PLPPSvhminrYNc9Sd0Nr0BCdWBgdA7GY0eVvML3WZAxOYKGo1AMh450QxvhSozUSx1EnQYLg=="
-  }
-
-
+  } 
 }
 
 provider "azurerm" {
