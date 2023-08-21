@@ -17,10 +17,7 @@ jobs:
     - uses: actions/checkout@v3           
     - name: az login
       run: |
-        az login --service-principal -u ${{secrets.user}} -p ${{secrets.password}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
-    - name: Setup Terraform
-      #uses: hashicorp/setup-terraform@v1
-      uses: hashicorp/setup-terraform@v1     
+        az login --service-principal -u ${{secrets.user}} -p ${{secrets.password}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"     
       
     - name: Terraform Init
       run: terraform init
