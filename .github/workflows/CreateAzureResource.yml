@@ -1,0 +1,20 @@
+name: DOTNET
+
+on:
+  push:
+    branches: [ "main" ]
+  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    container: 
+      image: kirankumarsivapuram/base_image:2.0             
+
+    steps:
+    - uses: actions/checkout@v3           
+    - name: az login
+      run: |
+        az login --service-principal -u ${{secrets.user}} -p ${{secrets.password}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
