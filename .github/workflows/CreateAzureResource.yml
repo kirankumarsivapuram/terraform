@@ -24,7 +24,7 @@ jobs:
         $GetModule=Get-InstalledModule -name az -ErrorAction Stop
         if($GetModule)
         {
-         write-host "alredy az module is available
+         write-host "alredy az module is available"
         }
         else
         {
