@@ -21,14 +21,14 @@ jobs:
     - name: download tf state file from storage account if exists
       shell: pwsh
       run: |
-        $GetModule=Get-InstalledModule -name "az" -ErrorAction Stop
+        $GetModule=Get-InstalledModule -name az -ErrorAction Stop
         if($GetModule)
         {
          write-host "alredy az module is available
         }
         else
         {
-          Install-Module -Name "az" -Repository psgallary -Force -ErrorAction Stop
+          Install-Module -Name az -Repository psgallary -Force -ErrorAction Stop
         }
         azcopy copy 'https://filebased.blob.core.windows.net/statefile/terraform.tfstate' '.terraform'
         
