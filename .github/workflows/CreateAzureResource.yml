@@ -2,7 +2,7 @@ name: RESOURCEGRUOP
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "git-actions" ]
   
 
 jobs:
