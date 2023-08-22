@@ -1,4 +1,4 @@
-name: DOTNET
+name: RESOURCEGRUOP
 
 on:
   push:
@@ -10,8 +10,8 @@ jobs:
 
     runs-on: ubuntu-latest
     continue-on-error: false
-    #container: 
-      #image: kirankumarsivapuram/base_image:2.0             
+    container: 
+      image: kirankumarsivapuram/base_image:3.0             
 
     steps:
     - uses: actions/checkout@v3           
