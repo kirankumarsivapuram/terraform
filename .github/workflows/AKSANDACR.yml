@@ -2,8 +2,7 @@ name: AKSANDACR
 
 on:
   push:
-    branches: [ "git-actions" ]
-  
+    branches: [ "git-actions" ]  
 
 jobs:
   build:
