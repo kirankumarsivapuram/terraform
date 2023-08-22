@@ -54,7 +54,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     os_disk_size_gb = "30"
     #availability_zones  = [1, 2, 3]
     enable_auto_scaling = var.AKS_Default_Node_pool_enable_auto_scale
-    #vnet_subnet_id = azurerm_subnet.virtualsubnet.id
+    vnet_subnet_id = azurerm_subnet.virtualsubnet.id
   }
  
   identity {
