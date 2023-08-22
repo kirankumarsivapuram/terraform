@@ -21,8 +21,10 @@ jobs:
     - name: download tf state file from storage account if exists
       shell: pwsh
       run: |
-        Install-Module -Name az -Repository psgallery -Force -ErrorAction Stop        
-        azcopy copy 'https://filebased.blob.core.windows.net/statefile/terraform.tfstate' '.terraform'
+        Install-Module -Name az -Repository psgallery -Force -ErrorAction Stop 
+        write-output "done"
+        azcopy copy 'https://filebased.blob.core.windows.net/statefile/terraform.tfstate' '.terraform/'
+        write-output "one"
         
     - name: Terraform Init
       run: terraform init
