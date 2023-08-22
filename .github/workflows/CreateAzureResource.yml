@@ -21,7 +21,7 @@ jobs:
     - name: download tf state file from storage account if exists
       shell: pwsh
       run: |
-        $GetModule=Get-InstalledModule -name az -ErrorAction Stop
+        $GetModule=Get-InstalledModule -name az
         if($GetModule)
         {
          write-host "alredy az module is available"
