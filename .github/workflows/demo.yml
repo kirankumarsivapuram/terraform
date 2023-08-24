@@ -1,7 +1,7 @@
 name: RESOURCEGRUOP
 
 on:
-  pull_request:
+  push:
     
 
 jobs:
