@@ -18,7 +18,8 @@ jobs:
     - name: az login
       run: |
         
-        az login --service-principal -u ${{secrets.user1}} -p ${{secrets.password1}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
+        #az login --service-principal -u ${{secrets.user1}} -p ${{secrets.password1}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
+        az login -u ${{secrets.user2}} -p ${{secrets.password2}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
         az account set -s e64d2b7e-f9cf-4177-afb5-b4eb654ca3cb --verbose
     - name: download tf state file from storage account if exists
       shell: pwsh
