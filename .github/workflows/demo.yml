@@ -18,7 +18,7 @@ jobs:
     - name: git push
       run: |
         touch subhajit.txt
-        git config remote.origin.url https://github.com/<username>/<repo>.git
+        git config remote.origin.url https://github.com/kirankumarsivapuram/terraform.git
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add subhajit.txt
