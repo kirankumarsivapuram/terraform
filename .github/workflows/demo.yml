@@ -26,7 +26,6 @@ jobs:
         git add ./*.txt
         git commit -m "adding tfstate file"
         git status
-        git push origin main
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
