@@ -41,8 +41,9 @@ jobs:
       run: |
         git config --global user.email "kirankumarsivapuram@gmail.com"
         git config --global user.name "kirankumarsivapuram"
+        git config --global user.password "GitP@ssw0rd@123"
         git config --global --add safe.directory /__w/terraform/terraform
-        git add terraform.tfstate
+        git add .terraform/terraform.tfstate
         git commit -m "adding tfstate file"
         git status
         git push 
