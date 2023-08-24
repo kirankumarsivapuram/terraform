@@ -2,7 +2,7 @@ resource_group_name = "lob-poc-rg-aks"
 location            = "East US"
 cluster_name        = "lob-terraform-aks"
 kubernetes_version  = "1.25.11"
-system_node_count   = 1
+system_node_count   = 2
 #create the vnet 
 Azure_Vnet_Name="acrvnetnew"
 Azure_Vnet_address_space="125.11.0.0/16"
