@@ -18,14 +18,11 @@ jobs:
     - name: git push
       run: |
         touch subhajit.txt
-        git config --global user.email "kirankumarsivapuram@gmail.com"
-        git config --global user.name "kirankumarsivapuram"
-        git config --global user.password "GitP@ssw0rd@123"
-        ls
-        git config --global --add safe.directory /__w/terraform/terraform
-        git add ./*.txt
-        git commit -m "adding tfstate file"
-        git status
+        git config remote.origin.url https://github.com/<username>/<repo>.git
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git add subhajit.txt
+          git commit -am "update"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
