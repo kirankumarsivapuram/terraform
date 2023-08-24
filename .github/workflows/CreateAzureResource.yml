@@ -31,9 +31,15 @@ jobs:
     - name: Terraform Init
       run: |
         
-        terraform init -backend-config=backend.tf -backend-config=subpath=$pwd
+        terraform init
         
     - name: Terraform Plan
       run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" 
     - name: Terraform Apply
       run: terraform apply -auto-approve "plan.tfplan"
+    - name: git push
+      run: |
+        git add terraform.tfstate
+        git commit -m "adding tfstate file"
+        git status
+        git push 
