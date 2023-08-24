@@ -82,4 +82,23 @@ variable "Azure_Subnet_Name_address_prefixes" {
   type        = string
   description = "Virtual Network subnet address prefixes "
 }
+variable "subscription_id" {
+  type        = string
+  description = "Subscription ID"
+}
+
+variable "tenant_id" {
+  type        = string
+  description = "Tenant ID"
+}
+
+variable "client_id" {
+  type        = string
+  description = "Client ID"
+}
+
+variable "client_secret" {
+  type        = string
+  description = "ClientSecret"
+}
 
