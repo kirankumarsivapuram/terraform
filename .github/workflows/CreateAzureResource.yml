@@ -39,6 +39,7 @@ jobs:
       run: terraform apply -auto-approve "plan.tfplan"
     - name: git push
       run: |
+        git config --global --add safe.directory /__w/terraform/terraform
         git add terraform.tfstate
         git commit -m "adding tfstate file"
         git status
