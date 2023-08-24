@@ -1,0 +1,29 @@
+name: RESOURCEGRUOP
+
+on:
+  pull_request:
+    
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    container: 
+      image: kirankumarsivapuram/base_image:3.0             
+
+    steps:
+    - uses: actions/checkout@v3           
+    
+    - name: git push
+      run: |
+        touch subhajit.txt
+        git config --global user.email "kirankumarsivapuram@gmail.com"
+        git config --global user.name "kirankumarsivapuram"
+        git config --global user.password "GitP@ssw0rd@123"
+        ls
+        git config --global --add safe.directory /__w/terraform/terraform
+        git add ./*.txt
+        git commit -m "adding tfstate file"
+        git status
+        git push origin main
