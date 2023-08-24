@@ -29,7 +29,7 @@ jobs:
     - name: Terraform Init
       run: |
         
-        terraform init  -backend-config="backend.tf"
+        terraform init  
         
     - name: Terraform Plan
       run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user}}" -var client_secret="${{secrets.password}}" 
