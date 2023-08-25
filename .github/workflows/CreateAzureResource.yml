@@ -39,25 +39,12 @@ jobs:
         #azcopy copy 'https://filebased.blob.core.windows.net/statefile/terraform.tfstate' '.terraform/'
         write-output "one"
         
-    - name: Terraform Init
-      
-      run: |
-        
-        terraform init 
-        #-var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" -var subscription_id="e64d2b7e-f9cf-4177-afb5-b4eb654ca3cb"
+    - name: Terraform Init      
+      run: |        
+        terraform init       
         
     - name: Terraform Plan
-      run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" 
+      run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user}}" -var client_secret="${{secrets.password}}" 
     - name: Terraform Apply
       run: terraform apply -auto-approve "plan.tfplan"
-    - name: git push
-      run: |
-        git config --global user.email "kirankumarsivapuram@gmail.com"
-        git config --global user.name "kirankumarsivapuram"
-        git config --global user.password "GitP@ssw0rd@123"
-        ls
-        git config --global --add safe.directory /__w/terraform/terraform
-        git add ./.terraform/terraform.tfstate
-        git commit -m "adding tfstate file"
-        git status
-        git push 
+    
