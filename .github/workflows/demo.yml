@@ -8,12 +8,19 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+        contents: write
+        packages: write
     continue-on-error: false
     container: 
       image: kirankumarsivapuram/base_image:3.0             
 
     steps:
-    - uses: actions/checkout@v3           
+    - uses: actions/checkout@v3
+      with:
+          persist-credentials: false
+          fetch-depth: 0
+    
     
     - name: git push
       run: |
