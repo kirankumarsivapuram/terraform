@@ -1,7 +1,8 @@
 name: demo
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: "* * * * *"
     
     
 
