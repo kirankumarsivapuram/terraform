@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: false
     env:
-        ARM_CLIENT_ID: "${{secrets.user}}"
-        ARM_CLIENT_SECRET: "${{secrets.password1}}"
-        ARM_SUBSCRIPTION_ID: "${{secrets.azure_subscription_id}}"
-        ARM_TENANT_ID: "${{secrets.azure_tenent_id}}"
+        ARM_CLIENT_ID: "b26d672a-0f97-4334-98bc-fea755e1a435"
+        ARM_CLIENT_SECRET: "EWN8Q~p5Rbf_sDpOKcyGWbB_BZAE_yR48Pdctclo"
+        ARM_SUBSCRIPTION_ID: "e64d2b7e-f9cf-4177-afb5-b4eb654ca3cb"
+        ARM_TENANT_ID: "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
     container: 
       image: kirankumarsivapuram/base_image:3.0             
 
