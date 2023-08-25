@@ -33,7 +33,7 @@ jobs:
     - name: Terraform Init
       run: |
         
-        terraform init -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" 
+        terraform init -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" - var subscription_id="e64d2b7e-f9cf-4177-afb5-b4eb654ca3cb"
         
     - name: Terraform Plan
       run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" 
