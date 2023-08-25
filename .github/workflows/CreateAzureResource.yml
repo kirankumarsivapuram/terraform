@@ -31,7 +31,7 @@ jobs:
     - name: Terraform Init
       run: |
         
-        terraform init
+        terraform init -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" 
         
     - name: Terraform Plan
       run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user1}}" -var client_secret="${{secrets.password1}}" 
