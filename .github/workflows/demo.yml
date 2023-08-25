@@ -1,7 +1,7 @@
 name: RESOURCEGRUOP
 
 on:
-  pulpull_request:
+  pull_request:
     
     
 
