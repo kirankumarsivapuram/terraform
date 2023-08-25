@@ -18,18 +18,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-          persist-credentials: false
-          fetch-depth: 0
+          token: ${{ secrets.pat_token }}
+          
     
     
     - name: git push
       run: |
         touch subhajit.txt
-        git config remote.origin.url https://github.com/kirankumarsivapuram/terraform.git
+        #git config remote.origin.url https://github.com/kirankumarsivapuram/terraform.git
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add subhajit.txt
           git commit -am "update"
+          git push
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
