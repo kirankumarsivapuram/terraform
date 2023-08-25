@@ -1,7 +1,7 @@
-name: RESOURCEGRUOP
+name: demo
 
 on:
-  workflow_run:
+  workflow_dispatch:
     
     
 
