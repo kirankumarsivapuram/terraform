@@ -27,3 +27,19 @@ variable "client_secret" {
   type        = string
   description = "ClientSecret"
 }
+variable "backend_resource_group_name" {
+  type        = string
+  description = "Backend_Resource_Group_Name"
+}
+variable "backend_storage_account_name" {
+  type        = string
+  description = "Backend_Storage_Account_Name"
+}
+variable "backend_container_name" {
+  type        = string
+  description = "Backend_Container_Name"
+}
+variable "backend_tfstatefile_name" {
+  type        = string
+  description = "Backend_TfStatefile_name"
+}
