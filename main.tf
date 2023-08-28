@@ -5,8 +5,7 @@ terraform {
       source  = "hashicorp/azurerm"
 
     }
-}
-  
+}  
 
   
 
