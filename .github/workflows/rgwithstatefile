@@ -1,0 +1,42 @@
+name: rgwithstatefile
+
+on:
+  push:
+    branches: [ "Resource-Group-with-backend" ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    env:
+        ARM_CLIENT_ID: ${{secrets.user}}
+        ARM_CLIENT_SECRET: ${{secrets.password}}
+        ARM_SUBSCRIPTION_ID: ${{secrets.azure_subscription_id}}
+        ARM_TENANT_ID: ${{secrets.azure_tenent_id}}
+    container: 
+      image: kirankumarsivapuram/base_image:3.0             
+
+    steps:
+    - uses: actions/checkout@v3           
+    - name: az login
+      run: |
+
+        #az login --service-principal -u ${{secrets.user}} -p ${{secrets.password}} -t "5461eb53-e0fd-4320-92ff-c6efe1fe91e9"       
+        #az account set -s e64d2b7e-f9cf-4177-afb5-b4eb654ca3cb --verbose
+        #chmod 777 init.sh
+        #./init.sh
+        #export ARM_CLIENT_ID="b26d672a-0f97-4334-98bc-fea755e1a435"
+        #export ARM_CLIENT_SECRET="EWN8Q~p5Rbf_sDpOKcyGWbB_BZAE_yR48Pdctclo"
+        #export ARM_TENANT_ID="5461eb53-e0fd-4320-92ff-c6efe1fe91e9"
+        #export ARM_SUBSCRIPTION_ID="e64d2b7e-f9cf-4177-afb5-b4eb654ca3cb"
+
+
+    - name: Terraform Init      
+      run: terraform init       
+
+    - name: Terraform Plan
+      run: terraform plan -out="plan.tfplan" -var client_id="${{secrets.user}}" -var client_secret="${{secrets.password}}" 
+    - name: Terraform Apply
+      run: terraform apply -auto-approve "plan.tfplan"
